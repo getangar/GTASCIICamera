@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings (English)
+  GT ASCII Camera
+
+  Created by Gennaro Tocco
+*/
+
+// Permissions
+"permission_title" = "Camera Access Required";
+"permission_message" = "GT ASCII Camera needs access to your camera to create real-time ASCII art from your video feed.";
+"permission_button" = "Enable Camera";
+
+// Capture Modes
+"mode_photo" = "Photo";
+"mode_video" = "Video";
+
+// Palettes
+"palette_classic" = "Classic";
+"palette_unicode" = "Unicode Blocks";
+
+// Settings
+"settings_title" = "Settings";
+"settings_section_palette" = "Character Palette";
+"settings_palette_footer" = "Classic uses traditional ASCII characters. Unicode Blocks provide a denser, more modern look.";
+"settings_section_resolution" = "Resolution";
+"settings_columns" = "Columns";
+"settings_fontsize" = "Font Size";
+"settings_resolution_footer" = "More columns means finer detail but smaller characters. Adjust font size for readability.";
+"settings_section_appearance" = "Appearance";
+"settings_colored" = "Colored Output";
+"settings_invert" = "Invert Luminance";
+"settings_dark_bg" = "Dark Background";
+"settings_section_presets" = "Quick Presets";
+"settings_section_about" = "About";
+
+// Presets
+"preset_retro" = "Retro Terminal";
+"preset_retro_desc" = "Green on black, classic ASCII, 80 columns";
+"preset_modern" = "Modern Blocks";
+"preset_modern_desc" = "Unicode blocks, colored, 120 columns";
+"preset_detail" = "High Detail";
+"preset_detail_desc" = "Classic ASCII, colored, 160 columns";
+
+// About
+"about_version" = "Version";
+"about_developer" = "Developer";
+"about_rendering" = "Rendering";
+
+// General
+"done" = "Done";
+"ok" = "OK";
+"error_title" = "Error";
+"error_no_camera" = "No camera available";
+"error_photo_permission" = "Photo library access denied";
+"saved_confirmation" = "Saved to Photos";

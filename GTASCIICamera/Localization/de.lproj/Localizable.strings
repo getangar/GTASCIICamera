@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings (German)
+  GT ASCII Camera
+
+  Created by Gennaro Tocco
+*/
+
+// Permissions
+"permission_title" = "Kamerazugriff erforderlich";
+"permission_message" = "GT ASCII Camera benötigt Zugriff auf deine Kamera, um ASCII-Kunst in Echtzeit aus deinem Videosignal zu erstellen.";
+"permission_button" = "Kamera aktivieren";
+
+// Capture Modes
+"mode_photo" = "Foto";
+"mode_video" = "Video";
+
+// Palettes
+"palette_classic" = "Klassisch";
+"palette_unicode" = "Unicode-Blöcke";
+
+// Settings
+"settings_title" = "Einstellungen";
+"settings_section_palette" = "Zeichenpalette";
+"settings_palette_footer" = "Klassisch verwendet traditionelle ASCII-Zeichen. Unicode-Blöcke bieten einen dichteren, modernen Look.";
+"settings_section_resolution" = "Auflösung";
+"settings_columns" = "Spalten";
+"settings_fontsize" = "Schriftgröße";
+"settings_resolution_footer" = "Mehr Spalten bedeuten feinere Details, aber kleinere Zeichen. Passe die Schriftgröße für die Lesbarkeit an.";
+"settings_section_appearance" = "Darstellung";
+"settings_colored" = "Farbausgabe";
+"settings_invert" = "Luminanz invertieren";
+"settings_dark_bg" = "Dunkler Hintergrund";
+"settings_section_presets" = "Schnellvorlagen";
+"settings_section_about" = "Über";
+
+// Presets
+"preset_retro" = "Retro-Terminal";
+"preset_retro_desc" = "Grün auf Schwarz, klassisches ASCII, 80 Spalten";
+"preset_modern" = "Moderne Blöcke";
+"preset_modern_desc" = "Unicode-Blöcke, farbig, 120 Spalten";
+"preset_detail" = "Hohe Details";
+"preset_detail_desc" = "Klassisches ASCII, farbig, 160 Spalten";
+
+// About
+"about_version" = "Version";
+"about_developer" = "Entwickler";
+"about_rendering" = "Rendering";
+
+// General
+"done" = "Fertig";
+"ok" = "OK";
+"error_title" = "Fehler";
+"error_no_camera" = "Keine Kamera verfügbar";
+"error_photo_permission" = "Zugriff auf die Fotomediathek verweigert";
+"saved_confirmation" = "In Fotos gespeichert";

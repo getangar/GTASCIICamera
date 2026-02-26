@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  GT ASCII Camera
+
+  Created by Gennaro Tocco
+*/
+
+// MARK: - Permission View
+"permission_title" = "Camera Access Required";
+"permission_message" = "GT ASCII Camera needs access to your camera to create real-time ASCII art from your video feed.";
+"permission_button" = "Enable Camera";

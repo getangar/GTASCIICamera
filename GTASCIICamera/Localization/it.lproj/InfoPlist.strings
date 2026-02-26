@@ -1,0 +1,6 @@
+/* Italian - Info.plist localized strings */
+"CFBundleDisplayName" = "GT ASCII Camera";
+"NSCameraUsageDescription" = "GT ASCII Camera necessita dell'accesso alla fotocamera per creare ASCII art in tempo reale dal tuo video.";
+"NSMicrophoneUsageDescription" = "GT ASCII Camera necessita dell'accesso al microfono per registrare l'audio con i tuoi video ASCII art.";
+"NSPhotoLibraryAddUsageDescription" = "GT ASCII Camera necessita dell'accesso alla libreria foto per salvare le tue foto e i tuoi video ASCII art.";
+"NSPhotoLibraryUsageDescription" = "GT ASCII Camera necessita dell'accesso alla libreria foto per salvare e condividere le tue creazioni ASCII art.";

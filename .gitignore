@@ -1,0 +1,58 @@
+## --- Xcode ---
+# Build artifacts and temporary files
+build/
+DerivedData/
+
+# User-specific settings (window positions, open files, etc.)
+# We ignore the whole folder to avoid "ghost" changes in git
+xcuserdata/
+
+# Xcode Project metadata (usually safe to ignore)
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xccheckout
+*.xcscmblueprint
+
+# Test results and logs
+*.xcresult
+*.log
+
+## --- Swift Package Manager ---
+# Ignore the SPM build directory
+.build/
+
+# Note: It is usually recommended to COMMIT Package.resolved 
+# to ensure the whole team uses the same dependency versions.
+# If you want to ignore it, uncomment the line below:
+# Package.resolved
+
+## --- CocoaPods (If applicable) ---
+# We ignore the Pods directory; they are restored via 'pod install'
+Pods/
+
+## --- Carthage (If applicable) ---
+Carthage/Build/
+
+## --- Fastlane (If applicable) ---
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+## --- Security & Environment ---
+# Never commit API keys, secrets, or certificates
+.env
+*.key
+*.p12
+*.provisionprofile
+
+## --- System Files ---
+.DS_Store
+*.swp
+*~

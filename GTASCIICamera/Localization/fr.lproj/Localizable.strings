@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings (French)
+  GT ASCII Camera
+
+  Created by Gennaro Tocco
+*/
+
+// Permissions
+"permission_title" = "Accès à la caméra requis";
+"permission_message" = "GT ASCII Camera a besoin d'accéder à votre caméra pour créer de l'art ASCII en temps réel à partir de votre flux vidéo.";
+"permission_button" = "Activer la caméra";
+
+// Capture Modes
+"mode_photo" = "Photo";
+"mode_video" = "Vidéo";
+
+// Palettes
+"palette_classic" = "Classique";
+"palette_unicode" = "Blocs Unicode";
+
+// Settings
+"settings_title" = "Réglages";
+"settings_section_palette" = "Palette de caractères";
+"settings_palette_footer" = "Classique utilise des caractères ASCII traditionnels. Les Blocs Unicode offrent un rendu plus dense et moderne.";
+"settings_section_resolution" = "Résolution";
+"settings_columns" = "Colonnes";
+"settings_fontsize" = "Taille de police";
+"settings_resolution_footer" = "Plus de colonnes signifie plus de détails mais des caractères plus petits. Ajustez la taille de police pour la lisibilité.";
+"settings_section_appearance" = "Apparence";
+"settings_colored" = "Sortie en couleur";
+"settings_invert" = "Inverser la luminance";
+"settings_dark_bg" = "Fond sombre";
+"settings_section_presets" = "Préréglages rapides";
+"settings_section_about" = "À propos";
+
+// Presets
+"preset_retro" = "Terminal rétro";
+"preset_retro_desc" = "Vert sur noir, ASCII classique, 80 colonnes";
+"preset_modern" = "Blocs modernes";
+"preset_modern_desc" = "Blocs Unicode, en couleur, 120 colonnes";
+"preset_detail" = "Haute définition";
+"preset_detail_desc" = "ASCII classique, en couleur, 160 colonnes";
+
+// About
+"about_version" = "Version";
+"about_developer" = "Développeur";
+"about_rendering" = "Rendu";
+
+// General
+"done" = "Terminé";
+"ok" = "OK";
+"error_title" = "Erreur";
+"error_no_camera" = "Aucune caméra disponible";
+"error_photo_permission" = "Accès à la photothèque refusé";
+"saved_confirmation" = "Enregistré dans Photos";

@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings (Italian)
+  GT ASCII Camera
+
+  Created by Gennaro Tocco
+*/
+
+// Permissions
+"permission_title" = "Accesso alla Fotocamera Necessario";
+"permission_message" = "GT ASCII Camera necessita dell'accesso alla fotocamera per creare ASCII art in tempo reale dal tuo video.";
+"permission_button" = "Abilita Fotocamera";
+
+// Capture Modes
+"mode_photo" = "Foto";
+"mode_video" = "Video";
+
+// Palettes
+"palette_classic" = "Classica";
+"palette_unicode" = "Blocchi Unicode";
+
+// Settings
+"settings_title" = "Impostazioni";
+"settings_section_palette" = "Palette Caratteri";
+"settings_palette_footer" = "La Classica usa caratteri ASCII tradizionali. I Blocchi Unicode offrono un aspetto più denso e moderno.";
+"settings_section_resolution" = "Risoluzione";
+"settings_columns" = "Colonne";
+"settings_fontsize" = "Dimensione Font";
+"settings_resolution_footer" = "Più colonne significano maggior dettaglio ma caratteri più piccoli. Regola la dimensione del font per la leggibilità.";
+"settings_section_appearance" = "Aspetto";
+"settings_colored" = "Output a Colori";
+"settings_invert" = "Inverti Luminanza";
+"settings_dark_bg" = "Sfondo Scuro";
+"settings_section_presets" = "Preset Rapidi";
+"settings_section_about" = "Informazioni";
+
+// Presets
+"preset_retro" = "Terminale Retro";
+"preset_retro_desc" = "Verde su nero, ASCII classica, 80 colonne";
+"preset_modern" = "Blocchi Moderni";
+"preset_modern_desc" = "Blocchi Unicode, a colori, 120 colonne";
+"preset_detail" = "Alto Dettaglio";
+"preset_detail_desc" = "ASCII classica, a colori, 160 colonne";
+
+// About
+"about_version" = "Versione";
+"about_developer" = "Sviluppatore";
+"about_rendering" = "Rendering";
+
+// General
+"done" = "Fine";
+"ok" = "OK";
+"error_title" = "Errore";
+"error_no_camera" = "Nessuna fotocamera disponibile";
+"error_photo_permission" = "Accesso alla libreria foto negato";
+"saved_confirmation" = "Salvato in Foto";
