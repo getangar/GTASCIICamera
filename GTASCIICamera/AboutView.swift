@@ -36,9 +36,9 @@ struct AboutView: View {
                         VStack(alignment: .leading, spacing: 12) {
                             HStack {
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("GT Fractals In‑App Purchase")
+                                    Text("GT ASCII Camera In‑App Purchase")
                                         .font(.headline)
-                                    Text("Support the development of GT Fractals.")
+                                    Text("Support the development of GT ASCII Camera.")
                                         .font(.caption)
                                         .foregroundStyle(.secondary)
                                 }
@@ -78,6 +78,43 @@ struct AboutView: View {
                 .disabled(store.isProcessing)
                 .padding(.top, 8)
                 
+                Divider()
+                    .padding(.vertical, 8)
+                
+                // App Information
+                VStack(spacing: 12) {
+                    HStack {
+                        Text("GT ASCII Camera")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        Text("\(appVersion) (\(buildNumber))")
+                            .font(.subheadline)
+                            .foregroundStyle(.primary)
+                    }
+                    
+                    HStack {
+                        Text("Author:")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        Text("Gennaro Eduardo Tangari")
+                            .font(.subheadline)
+                            .foregroundStyle(.primary)
+                    }
+                    
+                    HStack {
+                        Text("Copyright:")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        Text("(c) 2026 by Gennaro Eduardo Tangari")
+                            .font(.subheadline)
+                            .foregroundStyle(.primary)
+                    }
+                }
+                .padding(.horizontal, 32)
+                
                 Spacer()
             }
             .navigationTitle("Support Developer")
@@ -88,6 +125,16 @@ struct AboutView: View {
                 }
             }
         }
+    }
+    
+    // MARK: - Version Info
+    
+    private var appVersion: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
+    }
+    
+    private var buildNumber: String {
+        Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
     }
 }
 

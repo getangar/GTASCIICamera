@@ -17,7 +17,7 @@ final class PurchaseManager: ObservableObject {
     @Published var isProcessing: Bool = false
     @Published var errorMessage: String?
     
-    static let productID = "GTFractalsPurchase"
+    static let productID = "GTASCIICameraPurchase"
     
     init() {
         Task { await self.initialize() }
