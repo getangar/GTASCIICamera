@@ -1,8 +1,10 @@
 //
+//
 //  CameraManager.swift
 //  GT ASCII Camera
 //
-//  Created by Gennaro Tocco
+//  Created by Gennaro Eduardo Tangari on 27/02/2026.
+//  Copyright © 2026 Gennaro Eduardo Tangari. All rights reserved.
 //
 
 import Foundation
@@ -156,10 +158,8 @@ final class CameraManager: NSObject, ObservableObject {
                 connection.videoRotationAngle = rotationAngle
             }
             
-            // Mirror the front camera to match standard Camera app behavior
-            if useFrontCamera && connection.isVideoMirroringSupported {
-                connection.isVideoMirrored = true
-            }
+            // DO NOT mirror at the connection level - we'll handle it in the video writer
+            // This way the pixel buffers are always unmirrored for recording
         }
 
         // Audio input (for video recording)
