@@ -13,6 +13,7 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var settings: SettingsManager
     @Environment(\.dismiss) private var dismiss
+    @State private var showAbout = false
 
     var body: some View {
         NavigationStack {
@@ -192,28 +193,27 @@ struct SettingsView: View {
                     Text("Quick Presets")
                 }
 
-                // MARK: - About Section
+                // MARK: - Support & About Section
                 Section {
-                    HStack {
-                        Text("Version")
-                        Spacer()
-                        Text("1.0.0")
-                            .foregroundColor(.secondary)
+                    Button {
+                        showAbout = true
+                    } label: {
+                        HStack {
+                            Label {
+                                Text("About & Support Developer")
+                            } icon: {
+                                Image(systemName: "heart.circle.fill")
+                                    .foregroundColor(.red)
+                            }
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chevron.right")
+                                .font(.caption.bold())
+                                .foregroundColor(.secondary)
+                        }
                     }
-
-                    HStack {
-                        Text("Author")
-                        Spacer()
-                        Text("Gennaro Eduardo Tangari")
-                            .foregroundColor(.secondary)
-                    }
-
-                    HStack {
-                        Text("Copyright")
-                        Spacer()
-                        Text("(c) 2026 Gennaro Eduardo Tangari")
-                            .foregroundColor(.secondary)
-                    }
+                    .foregroundColor(.primary)
                 } header: {
                     Text("About")
                 }
@@ -227,6 +227,9 @@ struct SettingsView: View {
                     }
                     .fontWeight(.semibold)
                 }
+            }
+            .sheet(isPresented: $showAbout) {
+                AboutView()
             }
         }
     }
