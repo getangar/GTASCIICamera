@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950B52002F51B473004B415C /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B51FF2F51B473004B415C /* PurchaseManager.swift */; };
+		950B52022F51B493004B415C /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B52012F51B493004B415C /* AboutView.swift */; };
+		950B52042F51B4BE004B415C /* GTASCIICamera.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 950B52032F51B4BE004B415C /* GTASCIICamera.storekit */; };
 		A10001 /* GTASCIICameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10001 /* GTASCIICameraApp.swift */; };
 		A10002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10002 /* ContentView.swift */; };
 		A10003 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10003 /* CameraView.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		950B51FF2F51B473004B415C /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		950B52012F51B493004B415C /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		950B52032F51B4BE004B415C /* GTASCIICamera.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = GTASCIICamera.storekit; sourceTree = "<group>"; };
 		B10001 /* GTASCIICameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTASCIICameraApp.swift; sourceTree = "<group>"; };
 		B10002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B10003 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -83,6 +89,8 @@
 				D10040 /* Services */,
 				D10050 /* Metal */,
 				D10060 /* Localization */,
+				950B51FF2F51B473004B415C /* PurchaseManager.swift */,
+				950B52012F51B493004B415C /* AboutView.swift */,
 			);
 			path = GTASCIICamera;
 			sourceTree = "<group>";
@@ -105,6 +113,7 @@
 				B10004 /* SettingsView.swift */,
 				B10005 /* PermissionView.swift */,
 				B10006 /* MetalASCIIView.swift */,
+				950B52032F51B4BE004B415C /* GTASCIICamera.storekit */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +223,7 @@
 			files = (
 				A10020 /* Assets.xcassets in Resources */,
 				A10030 /* Localizable.strings in Resources */,
+				950B52042F51B4BE004B415C /* GTASCIICamera.storekit in Resources */,
 				A10031 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,10 +239,12 @@
 				A10002 /* ContentView.swift in Sources */,
 				A10003 /* CameraView.swift in Sources */,
 				A10004 /* SettingsView.swift in Sources */,
+				950B52022F51B493004B415C /* AboutView.swift in Sources */,
 				A10005 /* PermissionView.swift in Sources */,
 				A10006 /* MetalASCIIView.swift in Sources */,
 				A10007 /* ASCIIMetalRenderer.swift in Sources */,
 				A10008 /* ASCIIShaders.metal in Sources */,
+				950B52002F51B473004B415C /* PurchaseManager.swift in Sources */,
 				A10009 /* ASCIIPalette.swift in Sources */,
 				A10010 /* CaptureMode.swift in Sources */,
 				A10011 /* RenderingConfig.swift in Sources */,
