@@ -30,7 +30,7 @@ final class CameraManager: NSObject, ObservableObject {
 
     // MARK: - Capture Session
 
-    let captureSession = AVCaptureSession()
+    nonisolated(unsafe) let captureSession = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "com.gtasciicamera.session", qos: .userInteractive)
     nonisolated(unsafe) private let videoOutput = AVCaptureVideoDataOutput()
     nonisolated(unsafe) private let audioOutput = AVCaptureAudioDataOutput()
@@ -149,12 +149,15 @@ final class CameraManager: NSObject, ObservableObject {
 
         // Set video orientation
         if let connection = videoOutput.connection(with: .video) {
-            if connection.isVideoRotationAngleSupported(90) {
-                connection.videoRotationAngle = 90
+            // Front and back cameras need different rotation angles due to sensor orientation
+            let rotationAngle: CGFloat = useFrontCamera ? 0.0 : 90
+            
+            if connection.isVideoRotationAngleSupported(rotationAngle) {
+                connection.videoRotationAngle = rotationAngle
             }
-            if useFrontCamera && connection.isVideoMirroringSupported {
-                connection.isVideoMirrored = true
-            }
+            
+            // DO NOT mirror at the connection level - we'll handle it in the video writer
+            // This way the pixel buffers are always unmirrored for recording
         }
 
         // Audio input (for video recording)
@@ -280,6 +283,10 @@ final class CameraManager: NSObject, ObservableObject {
             outputSettings: videoSettings
         )
         videoWriterInput?.expectsMediaDataInRealTime = true
+        
+        // The frames are already rotated to portrait by the video connection (90 degrees)
+        // No additional transform needed - the pixel buffers are correct for recording
+        videoWriterInput?.transform = .identity
 
         // Pixel buffer adaptor for writing rendered ASCII frames
         let attributes: [String: Any] = [

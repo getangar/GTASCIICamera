@@ -26,7 +26,7 @@ struct RenderUniforms {
     uint textureHeight;
     uint invertLuminance;
     float fontSize;
-    float padding;
+    float contrast;  // 1.0 = normal, higher values increase contrast
 };
 
 // MARK: - Colored ASCII Kernel
@@ -77,6 +77,9 @@ kernel void asciiArtKernel(
 
     float avgLum = (sampleCount > 0.0) ? totalLum / sampleCount : 0.0;
     float3 avgColor = (sampleCount > 0.0) ? totalColor / sampleCount : float3(0.0);
+
+    // Apply contrast adjustment
+    avgLum = saturate((avgLum - 0.5) * uniforms.contrast + 0.5);
 
     if (uniforms.invertLuminance != 0) {
         avgLum = 1.0 - avgLum;
@@ -159,6 +162,10 @@ kernel void asciiArtMonochromeKernel(
     }
 
     float avgLum = (sampleCount > 0.0) ? totalLum / sampleCount : 0.0;
+
+    // Apply contrast adjustment
+    avgLum = saturate((avgLum - 0.5) * uniforms.contrast + 0.5);
+
     if (uniforms.invertLuminance != 0) {
         avgLum = 1.0 - avgLum;
     }

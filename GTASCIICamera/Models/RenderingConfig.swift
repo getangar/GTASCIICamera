@@ -25,8 +25,8 @@ struct RenderUniforms {
     var invertLuminance: UInt32
     /// Font size used for rendering characters (affects cell dimensions).
     var fontSize: Float
-    /// Padding/reserved for alignment.
-    var padding: Float
+    /// Contrast adjustment factor (1.0 = normal, higher values increase contrast).
+    var contrast: Float
 }
 
 /// Precomputed ASCII grid dimensions based on the output resolution and font metrics.

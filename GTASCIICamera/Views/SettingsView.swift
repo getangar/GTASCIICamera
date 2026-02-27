@@ -171,6 +171,22 @@ struct SettingsView: View {
                                 .foregroundColor(.yellow)
                         }
                     }
+
+                    Button {
+                        withAnimation { settings.applyBlackAndWhitePreset() }
+                    } label: {
+                        Label {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Black & White")
+                                Text("White on black, classic ASCII, 80 columns")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        } icon: {
+                            Image(systemName: "circle.fill")
+                                .foregroundColor(.white)
+                        }
+                    }
                 } header: {
                     Text("Quick Presets")
                 }

@@ -106,11 +106,11 @@ struct MetalASCIIView: UIViewRepresentable {
             let bgColor: SIMD4<Float>
 
             if settings.darkBackground {
-                fgColor = SIMD4<Float>(0, 1, 0, 1) // Classic green
+                fgColor = SIMD4<Float>(0, 1, 0, 1) // Classic green for retro terminal
                 bgColor = SIMD4<Float>(0, 0, 0, 1)
             } else {
-                fgColor = SIMD4<Float>(0, 0, 0, 1)
-                bgColor = SIMD4<Float>(1, 1, 1, 1)
+                fgColor = SIMD4<Float>(1, 1, 1, 1) // White for black & white mode
+                bgColor = SIMD4<Float>(0, 0, 0, 1) // Black background
             }
 
             guard let outputTexture = renderer.renderASCIIFrame(

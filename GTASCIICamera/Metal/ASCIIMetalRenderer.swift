@@ -321,7 +321,7 @@ final class ASCIIMetalRenderer {
             textureHeight: UInt32(sourceTexture.height),
             invertLuminance: invertLuminance ? 1 : 0,
             fontSize: 16.0,
-            padding: 0.0
+            contrast: 1.5  // Increased from 1.0 for better contrast
         )
         encoder.setBytes(&uniforms, length: MemoryLayout<RenderUniforms>.size, index: 0)
 

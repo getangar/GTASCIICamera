@@ -43,12 +43,12 @@ final class SettingsManager: ObservableObject {
 
     /// The foreground color for monochrome ASCII rendering.
     var foregroundColor: Color {
-        darkBackground ? .green : .black
+        darkBackground ? .green : .white
     }
 
     /// The background color for the ASCII canvas.
     var backgroundColor: Color {
-        darkBackground ? .black : .white
+        darkBackground ? .black : .black
     }
 
     /// Computed number of rows based on columns and a typical aspect ratio.
@@ -89,5 +89,15 @@ final class SettingsManager: ObservableObject {
         coloredOutput = true
         invertLuminance = false
         darkBackground = true
+    }
+
+    /// Apply a "black & white" preset.
+    func applyBlackAndWhitePreset() {
+        selectedPalette = .classic
+        asciiColumns = 80
+        fontSize = 10.0
+        coloredOutput = false
+        invertLuminance = false
+        darkBackground = false // White foreground on black background
     }
 }
