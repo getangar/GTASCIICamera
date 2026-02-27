@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9550DA022F519A4C00A86A59 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B10040 /* Info.plist */; };
 		A10001 /* GTASCIICameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10001 /* GTASCIICameraApp.swift */; };
 		A10002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10002 /* ContentView.swift */; };
 		A10003 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10003 /* CameraView.swift */; };
@@ -215,7 +214,6 @@
 			files = (
 				A10020 /* Assets.xcassets in Resources */,
 				A10030 /* Localizable.strings in Resources */,
-				9550DA022F519A4C00A86A59 /* Info.plist in Resources */,
 				A10031 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +298,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				"CURRENT_PROJECT_VERSION[sdk=*]" = 12;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = MJQ7WZY78W;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -318,7 +317,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				"INFOPLIST_FILE[sdk=*]" = GTASCIICamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				"MARKETING_VERSION[sdk=*]" = " 1.0.0";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -358,6 +360,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				"CURRENT_PROJECT_VERSION[sdk=*]" = 12;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = MJQ7WZY78W;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -370,7 +373,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				"INFOPLIST_FILE[sdk=*]" = GTASCIICamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				"MARKETING_VERSION[sdk=*]" = " 1.0.0";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -386,7 +392,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
+				"CURRENT_PROJECT_VERSION[sdk=*]" = 14;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = GTASCIICamera/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "GT ASCII Camera";
@@ -417,7 +424,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
+				"CURRENT_PROJECT_VERSION[sdk=*]" = 14;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = GTASCIICamera/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "GT ASCII Camera";
