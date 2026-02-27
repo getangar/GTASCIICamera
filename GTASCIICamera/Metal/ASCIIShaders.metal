@@ -2,7 +2,8 @@
 //  ASCIIShaders.metal
 //  GT ASCII Camera
 //
-//  Created by Gennaro Tocco
+//  Created by Gennaro Eduardo Tangari on 27/02/2026.
+//  Copyright © 2026 Gennaro Eduardo Tangari. All rights reserved.
 //
 //  Metal compute kernel that converts a camera frame into ASCII art.
 //  Each thread processes one output pixel:

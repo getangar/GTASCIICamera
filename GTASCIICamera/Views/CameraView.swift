@@ -1,8 +1,10 @@
 //
+//
 //  CameraView.swift
 //  GT ASCII Camera
 //
-//  Created by Gennaro Tocco
+//  Created by Gennaro Eduardo Tangari on 27/02/2026.
+//  Copyright © 2026 Gennaro Eduardo Tangari. All rights reserved.
 //
 //  Main camera interface designed to feel familiar to iOS Camera app users.
 //  Features:

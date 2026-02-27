@@ -2,7 +2,8 @@
 //  MetalASCIIView.swift
 //  GT ASCII Camera
 //
-//  Created by Gennaro Tocco
+//  Created by Gennaro Eduardo Tangari on 27/02/2026.
+//  Copyright © 2026 Gennaro Eduardo Tangari. All rights reserved.
 //
 //  A SwiftUI wrapper around MTKView that displays the real-time ASCII art
 //  output from the Metal compute pipeline. The Coordinator handles frame
