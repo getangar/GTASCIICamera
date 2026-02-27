@@ -156,8 +156,10 @@ final class CameraManager: NSObject, ObservableObject {
                 connection.videoRotationAngle = rotationAngle
             }
             
-            // DO NOT mirror at the connection level - we'll handle it in the video writer
-            // This way the pixel buffers are always unmirrored for recording
+            // Mirror the front camera to match standard Camera app behavior
+            if useFrontCamera && connection.isVideoMirroringSupported {
+                connection.isVideoMirrored = true
+            }
         }
 
         // Audio input (for video recording)
