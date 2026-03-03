@@ -17,6 +17,7 @@
 
 import SwiftUI
 import Photos
+import AVFoundation
 
 struct CameraView: View {
     @EnvironmentObject var cameraManager: CameraManager
@@ -56,6 +57,11 @@ struct CameraView: View {
 
                     Spacer(minLength: 8)
 
+                    // Zoom controls
+                    ZoomControlView()
+                        .environmentObject(cameraManager)
+                        .padding(.bottom, 8)
+
                     // Mode selector
                     modeSelector
                         .padding(.bottom, 12)
@@ -85,10 +91,16 @@ struct CameraView: View {
         .statusBarHidden(true)
         .onAppear {
             setupRenderer()
+            
+            // Restore last zoom factor
+            cameraManager.currentZoomFactor = CGFloat(settings.lastZoomFactor)
+            
             cameraManager.configureSession(useFrontCamera: settings.useFrontCamera)
             cameraManager.startSession()
         }
         .onDisappear {
+            // Save current zoom factor
+            settings.lastZoomFactor = Double(cameraManager.currentZoomFactor)
             cameraManager.stopSession()
         }
         .sheet(isPresented: $showSettings) {
@@ -163,6 +175,23 @@ struct CameraView: View {
 
             Spacer()
 
+            // Lens indicator (shows which physical lens is active)
+            if let device = cameraManager.deviceManager.currentDevice {
+                HStack(spacing: 4) {
+                    Image(systemName: lensIcon(for: device.deviceType))
+                        .font(.system(size: 12))
+                    Text(lensName(for: device.deviceType))
+                        .font(.system(size: 11, weight: .medium, design: .rounded))
+                }
+                .foregroundColor(.white.opacity(0.8))
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(.ultraThinMaterial)
+                .clipShape(Capsule())
+            }
+
+            Spacer()
+
             // Palette quick switch
             Button {
                 impactLight.impactOccurred()
@@ -185,11 +214,17 @@ struct CameraView: View {
     private var viewfinder: some View {
         Group {
             if let renderer = renderer {
-                MetalASCIIView(
-                    renderer: renderer,
-                    cameraManager: cameraManager,
-                    settings: settings
-                )
+                ZStack {
+                    MetalASCIIView(
+                        renderer: renderer,
+                        cameraManager: cameraManager,
+                        settings: settings
+                    )
+                    
+                    // Pinch to zoom gesture
+                    PinchToZoomView()
+                        .environmentObject(cameraManager)
+                }
             } else {
                 Rectangle()
                     .fill(Color.black)
@@ -421,6 +456,32 @@ struct CameraView: View {
         let minutes = Int(duration) / 60
         let seconds = Int(duration) % 60
         return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    private func lensIcon(for deviceType: AVCaptureDevice.DeviceType) -> String {
+        switch deviceType {
+        case .builtInUltraWideCamera:
+            return "camera.macro"
+        case .builtInWideAngleCamera:
+            return "camera"
+        case .builtInTelephotoCamera:
+            return "teletype.circle"
+        default:
+            return "camera"
+        }
+    }
+    
+    private func lensName(for deviceType: AVCaptureDevice.DeviceType) -> String {
+        switch deviceType {
+        case .builtInUltraWideCamera:
+            return "Ultra Wide"
+        case .builtInWideAngleCamera:
+            return "Wide"
+        case .builtInTelephotoCamera:
+            return "Telephoto"
+        default:
+            return "Camera"
+        }
     }
 }
 
