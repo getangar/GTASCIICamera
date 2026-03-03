@@ -48,12 +48,12 @@ final class CameraManager: NSObject, ObservableObject {
     
     // MARK: - Video Recording
     
-    private var assetWriter: AVAssetWriter?
-    private var videoWriterInput: AVAssetWriterInput?
-    private var audioWriterInput: AVAssetWriterInput?
-    private var pixelBufferAdaptor: AVAssetWriterInputPixelBufferAdaptor?
-    private var recordingStartTime: CMTime?
-    private var recordingURL: URL?
+    nonisolated(unsafe) private var assetWriter: AVAssetWriter?
+    nonisolated(unsafe) private var videoWriterInput: AVAssetWriterInput?
+    nonisolated(unsafe) private var audioWriterInput: AVAssetWriterInput?
+    nonisolated(unsafe) private var pixelBufferAdaptor: AVAssetWriterInputPixelBufferAdaptor?
+    nonisolated(unsafe) private var recordingStartTime: CMTime?
+    nonisolated(unsafe) private var recordingURL: URL?
     private var recordingTimer: Timer?
     
     // MARK: - Frame Delivery
@@ -568,6 +568,14 @@ final class CameraManager: NSObject, ObservableObject {
         input.append(sampleBuffer)
     }
     
+    nonisolated private func appendAudioSampleNonisolated(_ sampleBuffer: CMSampleBuffer) {
+        guard let input = audioWriterInput,
+              recordingStartTime != nil,
+              input.isReadyForMoreMediaData else { return }
+        
+        input.append(sampleBuffer)
+    }
+    
     func saveVideoToLibrary(url: URL) async -> Bool {
         return await withCheckedContinuation { continuation in
             PHPhotoLibrary.requestAuthorization(for: .addOnly) { status in
@@ -608,11 +616,8 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate,
         if isVideo {
             onNewFrame?(sampleBuffer)
         } else {
-            // Nota: Se appendAudioSample causa lag, considera di spostare
-            // la logica della registrazione video su una coda non-MainActor.
-            Task { @MainActor in
-                self.appendAudioSample(sampleBuffer)
-            }
+            // Handle audio on the current queue (sessionQueue) to avoid sending non-Sendable CMSampleBuffer across actors
+            appendAudioSampleNonisolated(sampleBuffer)
         }
     }
     

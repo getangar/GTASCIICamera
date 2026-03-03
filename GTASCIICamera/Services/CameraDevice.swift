@@ -36,7 +36,7 @@ struct CameraDeviceInfo: Identifiable {
                 return 2.0
             } else {
                 // Fallback: check virtual device zoom capabilities
-                return CGFloat(device.virtualDeviceSwitchOverVideoZoomFactors.first ?? 2.0)
+                return CGFloat(truncating: device.virtualDeviceSwitchOverVideoZoomFactors.first ?? 2.0)
             }
         case .builtInTripleCamera, .builtInDualCamera, .builtInDualWideCamera:
             return 1.0
