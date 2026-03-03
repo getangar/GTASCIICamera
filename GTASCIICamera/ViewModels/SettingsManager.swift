@@ -36,6 +36,9 @@ final class SettingsManager: ObservableObject {
 
     /// Whether to use the front-facing camera.
     @AppStorage("useFrontCamera") var useFrontCamera: Bool = false
+    
+    /// Last used zoom factor (persisted across launches).
+    @AppStorage("lastZoomFactor") var lastZoomFactor: Double = 1.0
 
     /// Video recording resolution multiplier (1x = screen, 2x = double).
     @AppStorage("recordingQuality") var recordingQuality: Int = 1
